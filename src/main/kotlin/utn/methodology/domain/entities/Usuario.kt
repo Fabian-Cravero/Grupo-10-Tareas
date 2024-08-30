@@ -8,10 +8,10 @@ import java.util.UUID
 //El modelo deberá tener carácter de Entidad, se utilizará para realizar consultas a la base de datos.
 
 class Usuario (
-    private val uuid: String = UUID.randomUUID().toString(),
-    private var nombre: String,
-    private var username: String,
-    private var email: String,
-    private var contraseña: String,
+    val uuid: String = UUID.randomUUID().toString(),
+    var nombre: String,
+    var username: String,
+    var email: String,
+    var contraseña: String,
 )
 
