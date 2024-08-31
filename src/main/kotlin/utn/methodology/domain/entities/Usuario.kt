@@ -9,9 +9,9 @@ import java.util.UUID
 
 class Usuario (
     val uuid: String = UUID.randomUUID().toString(),
-    var nombre: String,
+    var name: String,
     var username: String,
     var email: String,
-    var contraseña: String,
+    var password: String,
 )
 
