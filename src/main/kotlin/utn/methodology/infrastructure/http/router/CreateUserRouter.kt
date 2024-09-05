@@ -11,7 +11,11 @@ import utn.methodology.infrastructure.http.actions.CreateUserAction
 fun Application.createUserRoutes(){
     val mongoDatabase = connectToMongoDB()
     routing {
+<<<<<<< HEAD
         post ("/users") {
+=======
+        post ("/create") {
+>>>>>>> cb9f3823485dc2326ff95e6629540162570f0b4b
             println("Received POST request to /create")
 
             val body = call.receive<CreateUserCommand>()
