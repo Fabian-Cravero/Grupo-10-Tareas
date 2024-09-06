@@ -7,14 +7,14 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import utn.methodology.application.commands.CreateUserCommand
 import utn.methodology.infrastructure.http.actions.CreateUserAction
-import utn.methodology.infrastructure.persistence.MongoUserRepository
 
-fun Application.CreateUserRoutes(){
+fun Application.createUserRoutes(){
     val mongoDatabase = connectToMongoDB()
-    val createUserAction = CreateUserAction(CreateUserHandler(userMongoUserRepository))
     routing {
 
         post ("/users") {
+
+            println("Received POST request to /create")
 
             val body = call.receive<CreateUserCommand>()
 
