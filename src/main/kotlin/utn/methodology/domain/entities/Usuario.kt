@@ -19,7 +19,6 @@ class Usuario (
                 primitives["email"] as String,
                 primitives["password"] as String,
             );
-
             return user;
         }
     }
@@ -32,6 +31,5 @@ class Usuario (
             "password" to this.password,
         )
     }
-
 }
 
