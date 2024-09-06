@@ -2,9 +2,9 @@ package utn.methodology.application.commandhandlers
 
 import utn.methodology.application.commands.DeleteUserCommand
 import io.ktor.server.plugins.*
-import example.com.infrastructure.persistence.MongoUserRepository
+import utn.methodology.infrastructure.persistence.MongoUserRepository
 
-class DeleteUserHandler {
+class DeleteUserHandler (
     private val userRepository: MongoUserRepository
     ) {
 

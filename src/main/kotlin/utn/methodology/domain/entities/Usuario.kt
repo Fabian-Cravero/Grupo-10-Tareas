@@ -3,12 +3,15 @@ package utn.methodology.domain.entities
 import java.util.UUID
 
 class Usuario (
-    val uuid: String = UUID.randomUUID().toString(),
+    val uuid: String,
     var name: String,
     var username: String,
     var email: String,
     var password: String,
 ){
+    fun getId(): String {
+        return this.uuid;
+    }
     companion object {
         fun fromPrimitives(primitives: Map<String, String>): Usuario {
 
