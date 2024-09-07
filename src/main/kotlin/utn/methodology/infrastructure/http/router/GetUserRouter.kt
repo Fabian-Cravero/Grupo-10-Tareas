@@ -17,7 +17,7 @@ fun Application.GetUserRouter(){
 
             val users = userMongoUserRepository.findAll()
 
-            call.respond(HttpStatusCode.OK, users.map{it.toPrimitive()})
+            call.respond(HttpStatusCode.OK, users.map{it.toPrimitives()})
 
         }
     }
