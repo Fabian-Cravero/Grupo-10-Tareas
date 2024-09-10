@@ -4,29 +4,27 @@ import com.mongodb.client.MongoCollection
 import com.mongodb.client.MongoDatabase
 import com.mongodb.client.model.UpdateOptions
 import org.bson.Document
-//import utn.methodology.domain.entities.UserRepository
 import utn.methodology.domain.entities.Usuario
-
 
 class UserMongoRepository(private val database: MongoDatabase){
 
     private var collection:MongoCollection<Any>;
 
     init {
-        collection = database.getCollection("user") as MongoCollection<Any>;
+        collection = database.getCollection("users") as MongoCollection<Any>;
     }
 
     fun save(user: Usuario) {
         val options = UpdateOptions().upsert(true);
 
-        val filter = Document("_id", user.getIdUser()) // Usa el campo id como filter
+        val filter = Document("_uuid", user.getIdUser())
         val update = Document("\$set", user.toPrimitives())
 
         collection.updateOne(filter, update, options)
     }
 
     fun findOne(id: String): Usuario? {
-        val filter = Document("_id", id);
+        val filter = Document("_uuid", id);
 
         val primitives = collection.find(filter).firstOrNull();
 
@@ -46,10 +44,28 @@ class UserMongoRepository(private val database: MongoDatabase){
         };
     }
 
+    fun findByUsername(username: String): Usuario? {
+        val filter = Document("username", username);
+        val primitives = collection.find(filter).firstOrNull();
+        if (primitives == null) {
+            return null;
+        }
+        return Usuario.fromPrimitives(primitives as Map<String, String>)
+    }
+
+    fun findByEmail(email: String): Usuario? {
+        val filter = Document("email", email);
+        val primitives = collection.find(filter).firstOrNull();
+        if (primitives == null) {
+            return null;
+        }
+        return Usuario.fromPrimitives(primitives as Map<String, String>)
+    }
+
+
     fun delete(user: Usuario) {
         val filter = Document("_uuid", user.getIdUser());
 
         collection.deleteOne(filter)
     }
-
 }
