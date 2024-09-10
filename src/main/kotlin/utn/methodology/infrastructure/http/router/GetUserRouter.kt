@@ -6,10 +6,11 @@ import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import utn.methodology.infrastructure.http.actions.GetUserAction
+import utn.methodology.infrastructure.persistence.UserMongoRepository
 
 fun Application.GetUserRouter(){
     val mongoDatabase = connectToMongoDB()
-    val userMongoUserRepository = MongoUserRepository(mongoDatabase)
+    val userMongoUserRepository = UserMongoRepository(mongoDatabase)
     routing {
 
         post ("/users") {

@@ -9,11 +9,12 @@ import io.ktor.server.routing.*
 import utn.methodology.application.commands.CreateUserCommand
 import utn.methodology.infrastructure.http.actions.CreateUserAction
 import utn.methodology.application.commandhandlers.CreateUserHandler
+import utn.methodology.infrastructure.persistence.UserMongoRepository
 
 fun Application.createUserRoutes(){
     val mongoDatabase = connectToMongoDB()
 
-    val userMongoUserRepository = MongoUserRepository(mongoDatabase)
+    val userMongoUserRepository = UserMongoRepository(mongoDatabase)
 
     val createUserAction = CreateUserAction(CreateUserHandler(userMongoUserRepository))
 
