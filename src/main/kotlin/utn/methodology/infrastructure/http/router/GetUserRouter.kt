@@ -13,7 +13,7 @@ fun Application.GetUserRouter(){
     val userMongoUserRepository = UserMongoRepository(mongoDatabase)
     routing {
 
-        post ("/users") {
+        get ("/users") {
 
             val users = userMongoUserRepository.findAll()
 
