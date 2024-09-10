@@ -1,5 +1,9 @@
 package utn.methodology.application.commands
 
+import kotlinx.serialization.Serializable
+
+@Serializable()
+
 class CreateUserCommand(
     val name: String,
     val username: String,

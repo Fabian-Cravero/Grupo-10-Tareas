@@ -1,0 +1,9 @@
+C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\domain\entities\Usuario.kt
+C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\CreateUserCommand.kt
+C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\DeleteUserCommand.kt
+C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\Application.kt
+C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\persistence\UserMongoRepository.kt
+C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\router\CreateUserRouter.kt
+C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\persistence\Databases.kt
+C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\actions\CreateUserAction.kt
+C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\UpdateUserCommand.kt

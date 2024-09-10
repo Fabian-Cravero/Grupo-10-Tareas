@@ -62,7 +62,6 @@ class UserMongoRepository(private val database: MongoDatabase){
         return Usuario.fromPrimitives(primitives as Map<String, String>)
     }
 
-
     fun delete(user: Usuario) {
         val filter = Document("_uuid", user.getIdUser());
 
