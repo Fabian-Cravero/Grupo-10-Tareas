@@ -9,9 +9,6 @@ class Usuario (
     var email: String,
     var password: String,
 ){
-    fun getId(): String {
-        return this.uuid;
-    }
     companion object {
         fun fromPrimitives(primitives: Map<String, String>): Usuario {
 
