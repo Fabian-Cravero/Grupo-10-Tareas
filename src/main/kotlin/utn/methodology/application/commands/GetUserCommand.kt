@@ -1,4 +1,4 @@
-package utn.methodology.application.queries
+package utn.methodology.application.commands
 
 class GetUserCommand (
     val username: String
