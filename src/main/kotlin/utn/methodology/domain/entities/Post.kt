@@ -3,8 +3,7 @@ package utn.methodology.domain.entities
 class Post(
     val uuid:String,
     val uuidUser:String,
-    var text: String,
-    var date: String,
+    var query: String
 ) {
     fun getIdUser(): String {
         return this.uuid;
@@ -15,8 +14,7 @@ class Post(
             val post = Post(
                 primitives["uuid"] as String,
                 primitives["uuidUser"] as String,
-                primitives["text"] as String,
-                primitives["date"] as String
+                primitives["query"] as String,
             );
             return post;
         }
@@ -25,12 +23,7 @@ class Post(
         return mapOf(
             "uuid" to this.uuid,
             "uuidUser" to this.uuidUser,
-            "text" to this.text,
-            "date" to this.date
+            "username" to this.query,
         )
-    }
-    fun validetDate(date:String):Boolean{
-        val regex = Regex("""\d{4}-\d{2}-\d{2}""")
-        return regex.matches(date)
     }
 }
