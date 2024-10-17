@@ -17,5 +17,5 @@ class CreatePostHandler (
 
         userRepository.save(post)
     }
-
 }
+
