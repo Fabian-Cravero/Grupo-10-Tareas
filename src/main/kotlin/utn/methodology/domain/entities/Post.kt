@@ -5,7 +5,7 @@ class Post(
     val uuidUser:String,
     var query: String
 ) {
-    fun getIdUser(): String {
+    fun getIdPost(): String {
         return this.uuid;
     }
     companion object {

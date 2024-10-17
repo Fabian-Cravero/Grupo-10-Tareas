@@ -16,7 +16,7 @@ class PostMongoRepository(private val database: MongoDatabase) {
     }
     fun save (post:Post){
         val options = UpdateOptions().upsert(true);
-        val filter = Document("uuid", post.getIdUser())
+        val filter = Document("uuid", post.getIdPost())
         val update = Document("\$set", post.toPrimitives())
         collection.updateOne(filter, update, options)
     }
@@ -31,7 +31,7 @@ class PostMongoRepository(private val database: MongoDatabase) {
         return Post.fromPrimitives(primitives as Map<String, String>)
     }
     fun delete(user: Post) {
-        val filter = Document("_id", user.getId());
+        val filter = Document("_id", user.getIdPost());
 
         collection.deleteOne(filter)
     }
