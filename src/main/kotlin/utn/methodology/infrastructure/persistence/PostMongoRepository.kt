@@ -20,4 +20,19 @@ class PostMongoRepository(private val database: MongoDatabase) {
         val update = Document("\$set", post.toPrimitives())
         collection.updateOne(filter, update, options)
     }
+    fun findOne(id: String): Post? {
+        val filter = Document("_id", id);
+
+        val primitives = collection.find(filter).firstOrNull();
+
+        if (primitives == null) {
+            return null;
+        }
+        return Post.fromPrimitives(primitives as Map<String, String>)
+    }
+    fun delete(user: Post) {
+        val filter = Document("_id", user.getId());
+
+        collection.deleteOne(filter)
+    }
 }

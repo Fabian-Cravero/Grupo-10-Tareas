@@ -26,4 +26,7 @@ class Post(
             "username" to this.query,
         )
     }
+    fun getId(): String {
+        return this.uuid;
+    }
 }

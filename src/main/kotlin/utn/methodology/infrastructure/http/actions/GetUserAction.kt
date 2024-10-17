@@ -1,7 +1,6 @@
 package utn.methodology.infrastructure.http.actions
 
-import utn.methodology.application.commandhandlers.GetUserHandler
-import utn.methodology.application.commands.GetUserCommand
+import utn.methodology.application.queries.GetUserCommand
 
 class GetUserAction(private val handler: GetUserHandler) {
 
