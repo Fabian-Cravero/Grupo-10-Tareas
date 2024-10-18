@@ -3,6 +3,7 @@ import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import utn.methodology.infrastructure.http.actions.GetPostAction
 import utn.methodology.infrastructure.persistence.PostMongoRepository
 import utn.methodology.infrastructure.persistence.connectToMongoDB
 
@@ -18,20 +19,23 @@ fun Application.GetPostRouter(){
 
            if (limit <= 0 || limit > 100) {
                call.respond(HttpStatusCode.BadRequest, "Limit must be between 1 and 100")
-               //return@get
+               return@get
            }
 
            if (order.uppercase() !in listOf("ASC", "DESC")) {
                call.respond(HttpStatusCode.BadRequest, "Order must be ASC or DESC")
-               //return@get
+               return@get
            }
 
-           val posts = mongoPostRepository.findAll(order, limit, offset)
+           val posts = mongoPostRepository.findAllOrder(order, limit, offset)
 
+           getPostAction.ex
 
            //val post = mongoPostRepository.findAll()
 
-           call.respond(HttpStatusCode.OK, posts.map{it.toPrimitives()})
+           //call.respond(HttpStatusCode.OK, posts.map{it.topri()})
+
+           call.respond(HttpStatusCode.OK, posts.Map{it.})
        }
    }
 }
