@@ -12,10 +12,18 @@ class CreatePostHandler (
         val post = Post(
             UUID.randomUUID().toString(),
             command.uuidUser,
-            command.query
+            command.text,
+            command.date
         )
-
-        userRepository.save(post)
+        if(post.text.length>100 ){
+            if(post.validetDate(post.date)){
+                userRepository.save(post)
+            }else{
+                throw IllegalArgumentException("date must be defined correctly YYYY-MM-DD")
+            }
+        }else{
+            throw IllegalArgumentException("You reached the character limit")
+        }
     }
 
 }

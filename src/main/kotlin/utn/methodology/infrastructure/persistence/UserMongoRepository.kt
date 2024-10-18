@@ -63,7 +63,7 @@ class UserMongoRepository(private val database: MongoDatabase){
     }
 
     fun delete(user: Usuario) {
-        val filter = Document("_uuid", user.getIdUser());
+        val filter = Document("uuid", user.getIdUser());
 
         collection.deleteOne(filter)
     }
