@@ -14,8 +14,6 @@ class CreatePostHandler (
             command.uuidUser,
             command.query
         )
-
         userRepository.save(post)
     }
-
 }

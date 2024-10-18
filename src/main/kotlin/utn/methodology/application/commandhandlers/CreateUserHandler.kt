@@ -16,9 +16,7 @@ class CreateUserHandler (
                 command.email,
                 command.password
             )
-
             userRepository.save(user)
         }
-
     }
 
