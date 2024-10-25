@@ -32,7 +32,7 @@ class PostMongoRepository(private val database: MongoDatabase)
 
     }
     fun findOne(id: String): Post? {
-        val filter = Document("_uuid", id);
+        val filter = Document("_id", id);
 
         val primitives = collection.find(filter).firstOrNull();
 
