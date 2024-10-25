@@ -8,7 +8,8 @@ import utn.methodology.domain.entities.Post
 import utn.methodology.domain.entities.Usuario
 
 
-class PostMongoRepository(private val database: MongoDatabase) {
+class PostMongoRepository(private val database: MongoDatabase)
+{
 
     private var collection: MongoCollection<Any>;
 
@@ -21,7 +22,6 @@ class PostMongoRepository(private val database: MongoDatabase) {
         val update = Document("\$set", post.toPrimitives())
         collection.updateOne(filter, update, options)
     }
-
     fun findAll(): List<Post> {
 
         val primitives = collection.find().map { it as Document }.toList();
@@ -31,7 +31,19 @@ class PostMongoRepository(private val database: MongoDatabase) {
         };
 
     }
+    fun findOne(id: String): Post? {
+        val filter = Document("_uuid", id);
 
+        val primitives = collection.find(filter).firstOrNull();
 
+        if (primitives == null) {
+            return null;
+        }
+        return Post.fromPrimitives(primitives as Map<String, String>)
+    }
+    fun delete(post: Post) {
+        val filter = Document("_uuid", post.getIdPost());
 
+        collection.deleteOne(filter)
+    }
 }

@@ -1,9 +1,44 @@
-C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\domain\entities\Usuario.kt
-C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\CreateUserCommand.kt
-C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\DeleteUserCommand.kt
-C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\Application.kt
-C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\persistence\UserMongoRepository.kt
-C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\router\CreateUserRouter.kt
-C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\persistence\Databases.kt
-C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\actions\CreateUserAction.kt
-C:\Users\matma\OneDrive\Escritorio\grupo10\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\UpdateUserCommand.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commandhandlers\DeletePostHandler.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\router\FollowerUserRouter.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\actions\FollowUserAction.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\actions\GetUserAction.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commandhandlers\unFollowerUserHandler.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\actions\FollowerUserAction.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\FollowerUserCommand.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\router\DeletePostRouter.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\FollowUserCommand.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\actions\GetPostAction.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\unFollowerUserCommand.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\router\CreatePostRouter.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commandhandlers\FollowerUserHandler.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\unFollowUserCommand.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\router\CreateUserRouter.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\persistence\PostMongoRepository.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\CreatePostCommand.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\persistence\UserMongoRepository.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\queries\FindPostByIdQuery.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\CreateUserCommand.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\GetUserCommand.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\router\GetPostRouter.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\domain\entities\Follower.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\actions\DeletePostAction.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\persistence\FollowerMongoRepository.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\actions\CreatePostAction.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\router\GetUserRouter.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\domain\entities\Usuario.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\persistence\FollowMongoRepository.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\DeletePostCommand.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\actions\unFollowUserAction.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\domain\entities\Follow.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\router\FollowUserRouter.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commandhandlers\CreatePostHandler.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\UpdateUserCommand.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\domain\entities\Post.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\actions\unFollowerUserAction.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\GetPostCommand.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commandhandlers\FollowUserHandler.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commandhandlers\unFollowUserHandler.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commandhandlers\CreateUserHandler.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\actions\CreateUserAction.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\persistence\Databases.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\Application.kt
