@@ -7,11 +7,12 @@ import utn.methodology.infrastructure.http.actions.GetPostAction
 import utn.methodology.infrastructure.http.actions.GetUserAction
 import utn.methodology.infrastructure.persistence.PostMongoRepository
 import utn.methodology.infrastructure.persistence.connectToMongoDB
+import  utn.methodology.application.queryhandlers.FindPostByHandlers
 
 fun Application.GetPostRouter(){
     val mongoDataBase = connectToMongoDB()
     val mongoPostRepository = PostMongoRepository(mongoDataBase)
-    val getpostAction = GetPostAction(GetPostHandler(mongoPostRepository))
+    val getpostAction = GetPostAction(FindPostByHandlers(mongoPostRepository))
     routing {
        get ("/posts") {
 
@@ -31,7 +32,7 @@ fun Application.GetPostRouter(){
 
            val posts = mongoPostRepository.findAll()
 
-           getpostAction.execute(body)
+//           getpostAction.execute(body)
 
            call.respond(HttpStatusCode.Created, posts.map{it.toPrimitives()})
        }
