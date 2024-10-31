@@ -3,8 +3,8 @@ import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
-//import utn.methodology.infrastructure.http.actions.GetPostAction
-//import utn.methodology.infrastructure.http.actions.GetUserAction
+import utn.methodology.application.queries.FindPostByIdQuery
+import utn.methodology.infrastructure.http.actions.GetPostAction
 import utn.methodology.infrastructure.persistence.PostMongoRepository
 import utn.methodology.infrastructure.persistence.connectToMongoDB
 import  utn.methodology.application.queryhandlers.FindPostByHandlers
@@ -12,7 +12,7 @@ import  utn.methodology.application.queryhandlers.FindPostByHandlers
 fun Application.GetPostRouter(){
     val mongoDataBase = connectToMongoDB()
     val mongoPostRepository = PostMongoRepository(mongoDataBase)
-//    val getpostAction = GetPostAction(FindPostByHandlers(mongoPostRepository))
+    val getpostAction = GetPostAction(FindPostByHandlers(mongoPostRepository))
     routing {
        get ("/posts") {
 
@@ -30,9 +30,11 @@ fun Application.GetPostRouter(){
                return@get
            }
 
-           val posts = mongoPostRepository.findAll()
+           val post = call.request.queryParameters.get("post").toString()
+           val query = FindPostByIdQuery(post)
+           val result = getpostAction.execute(query);
 
-           call.respond(HttpStatusCode.Created, posts.map{it.toPrimitives()})
+           call.respond(HttpStatusCode.Created, result)
        }
    }
 }

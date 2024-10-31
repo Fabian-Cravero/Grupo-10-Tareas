@@ -8,7 +8,7 @@ class FindUserByUsernameHandler(
     private val userRepository: UserMongoRepository
 ) {
 
-    fun handle(query: FindUserByUsernameQuery): Map<String, Any> {
+    fun handle(query: FindUserByUsernameQuery): Map<String, String> {
         val user = userRepository.findByUsername(query.userName)
             ?: throw NotFoundException("Usuario con el nombre de usuario '${query.userName}' no encontrado")
         return user.toPrimitives()
