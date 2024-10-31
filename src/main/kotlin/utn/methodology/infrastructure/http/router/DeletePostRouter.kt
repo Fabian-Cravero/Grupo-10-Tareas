@@ -10,7 +10,7 @@ import utn.methodology.application.commands.DeletePostCommand
 import utn.methodology.application.commandhandlers.DeletePostHandler
 import utn.methodology.infrastructure.http.actions.DeletePostAction
 
-fun Application.userRouter() {
+fun Application.DeletePostRouter() {
     val mongoDatabase = connectToMongoDB()
     val PostMongoRepository = PostMongoRepository(mongoDatabase)
     val deletePostAction = DeletePostAction(DeletePostHandler(PostMongoRepository))

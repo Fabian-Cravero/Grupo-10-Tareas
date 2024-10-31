@@ -22,7 +22,7 @@ fun Application.FollowUserRouter(){
     val unfollowUserAction = unFollowUserAction(unFollowUserHandler(followMongoUserRepository))
     val followUserAction = FollowUserAction(FollowUserHandler(followMongoUserRepository))
     routing {
-        get ("/follows") {
+        get ("/follow") {
 
             val follows = followMongoUserRepository.findAll()
 
