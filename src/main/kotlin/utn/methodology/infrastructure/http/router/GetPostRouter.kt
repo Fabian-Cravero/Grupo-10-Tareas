@@ -32,8 +32,6 @@ fun Application.GetPostRouter(){
 
            val posts = mongoPostRepository.findAll()
 
-//           getpostAction.execute(body)
-
            call.respond(HttpStatusCode.Created, posts.map{it.toPrimitives()})
        }
    }
