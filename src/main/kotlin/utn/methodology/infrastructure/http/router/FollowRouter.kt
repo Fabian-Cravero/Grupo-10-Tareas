@@ -27,7 +27,7 @@ fun Application.FollowRouter() {
     val unFollowUserAction = unFollowUserAction(unFollowUserHandler(followRepository))
 
     routing {
-        // obtener los posts de un usuario especifico
+        // obtener los posts de un usuario específico
         get("/posts/user/{userId}") {
             val userId = call.parameters["userId"]
             if (userId == null) {
