@@ -14,7 +14,8 @@ class CreatePostHandler (
             command.uuidUser,
             command.text,
             command.date,
-            command.createdAt)
+//            command.createdAt
+            )
         if(post.text.length>100 ){
             if(post.validateDate(post.date)){
                 userRepository.save(post)

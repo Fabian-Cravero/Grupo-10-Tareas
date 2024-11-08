@@ -36,15 +36,17 @@ fun Application.FollowRouter() {
             }
 
             // obtener usuarios que el usuario actual sigue
-            val followedUsers = followRepository.findByUser(userId)?.following ?: emptyList()
+            val followedUsers = followRepository.findAll();
+            val Post =postRepository.findPostbyFollow(followedUsers)
+            call.respond(HttpStatusCode.Created, Post)
 
             // obtener los posts y filtrar por usuarios seguidos
-            val posts = postRepository.findAll()
-                .filter { it.uuidUser in followedUsers }
-                .sortedByDescending { it.createdAt }
+//            val posts = postRepository.findAll()
+//                .filter { it.uuidUser in followedUsers }
+//                .sortedByDescending { it.createdAt }
 
             // responde con la lista de usuarios ya filtrada
-            call.respond(posts)
+//            call.respond(posts)
         }
 
         // ruta follow

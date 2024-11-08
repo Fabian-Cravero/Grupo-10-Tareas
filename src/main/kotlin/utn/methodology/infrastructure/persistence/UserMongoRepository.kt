@@ -30,7 +30,6 @@ class UserMongoRepository(private val database: MongoDatabase) {
 
     fun findAll(): List<Usuario> {
         val primitives = collection.find().map { it as Document }.toList();
-
         return primitives.map {
             Usuario.fromPrimitives(it.toMap() as Map<String, String>)
         };
@@ -48,8 +47,4 @@ class UserMongoRepository(private val database: MongoDatabase) {
         return primitives?.let { Usuario.fromPrimitives(it as Map<String, String>) }
     }
 
-    fun delete(user: Usuario) {
-        val filter = Document("_uuid", user.getIdUser())
-        collection.deleteOne(filter)
-    }
 }

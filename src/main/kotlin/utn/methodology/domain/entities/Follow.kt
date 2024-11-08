@@ -2,7 +2,8 @@ package utn.methodology.domain.entities
 
 class Follow (
     val uuid: String,
-    val user: String,){
+    val user: String,
+){
 
     companion object {
         fun fromPrimitives(primitives: Map<String, String>): Follow {
@@ -16,7 +17,7 @@ class Follow (
     fun toPrimitives(): Map<String, Any> {
         return mapOf(
             "uuid" to this.uuid,
-            "user" to this.user
+            "user" to this.user,
         )
     }
     fun getIdUser(): String {
