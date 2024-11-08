@@ -3,7 +3,7 @@ package utn.methodology.domain.entities
 class Post(
     val uuid: String,
     val uuidUser: String,
-    val userId: String,
+    // val userId: String,
     var text: String,
     var date: String,
     var createdAt: String
@@ -17,7 +17,7 @@ class Post(
             return Post(
                 uuid = primitives["uuid"] as String,
                 uuidUser = primitives["uuidUser"] as String,
-                userId = primitives["userId"] as String,
+                // userId = primitives["userId"] as String,
                 text = primitives["text"] as String,
                 date = primitives["date"] as String,
                 createdAt = primitives["createdAt"] as String
@@ -29,7 +29,7 @@ class Post(
         return mapOf(
             "uuid" to this.uuid,
             "uuidUser" to this.uuidUser,
-            "userId" to this.userId,
+            // "userId" to this.userId,
             "text" to this.text,
             "date" to this.date,
             "createdAt" to this.createdAt

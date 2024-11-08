@@ -13,10 +13,10 @@ class CreatePostHandler (
             UUID.randomUUID().toString(),
             command.uuidUser,
             command.text,
-            command.date
-        )
+            command.date,
+            command.createdAt)
         if(post.text.length>100 ){
-            if(post.validetDate(post.date)){
+            if(post.validateDate(post.date)){
                 userRepository.save(post)
             }else{
                 throw IllegalArgumentException("date must be defined correctly YYYY-MM-DD")
