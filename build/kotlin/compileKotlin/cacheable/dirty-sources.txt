@@ -8,6 +8,7 @@ C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\
 C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\FollowerUserCommand.kt
 C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\router\DeletePostRouter.kt
 C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\FollowUserCommand.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\queryhandlers\FindUserByUsernameHandler.kt
 C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\actions\GetPostAction.kt
 C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\unFollowerUserCommand.kt
 C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\router\CreatePostRouter.kt
@@ -21,11 +22,11 @@ C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\
 C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\CreateUserCommand.kt
 C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\GetUserCommand.kt
 C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\router\GetPostRouter.kt
-C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\domain\entities\Follower.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\router\FollowRouter.kt
 C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\actions\DeletePostAction.kt
-C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\persistence\FollowerMongoRepository.kt
 C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\actions\CreatePostAction.kt
 C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\http\router\GetUserRouter.kt
+C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\queries\FindUserByUsernameQuery.kt
 C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\domain\entities\Usuario.kt
 C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\infrastructure\persistence\FollowMongoRepository.kt
 C:\Users\fabia\OneDrive\UTN\Segundo año\Segundo Cuatrimestre\Sistemas de datos\Tareas\Grupo-10-Tareas\src\main\kotlin\utn\methodology\application\commands\DeletePostCommand.kt

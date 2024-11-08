@@ -40,7 +40,7 @@ fun Application.FollowRouter() {
 
             // obtener los posts y filtrar por usuarios seguidos
             val posts = postRepository.findAll()
-                .filter { it.userId in followedUsers }
+                .filter { it.uuidUser in followedUsers }
                 .sortedByDescending { it.createdAt }
 
             // responde con la lista de usuarios ya filtrada
