@@ -5,7 +5,7 @@ import com.mongodb.client.MongoDatabase
 import com.mongodb.client.model.UpdateOptions
 import org.bson.Document
 import utn.methodology.domain.entities.Post
-import utn.methodology.domain.entities.Usuario
+import utn.methodology.domain.entities.Follow
 
 
 class PostMongoRepository(private val database: MongoDatabase)
@@ -38,12 +38,25 @@ class PostMongoRepository(private val database: MongoDatabase)
 
         if (primitives == null) {
             return null;
+        } else {
+            return Post.fromPrimitives(primitives as Map<String, String>)
         }
-        return Post.fromPrimitives(primitives as Map<String, String>)
     }
     fun delete(post: Post) {
         val filter = Document("_uuid", post.getIdPost());
 
         collection.deleteOne(filter)
     }
+    fun findPostbyFollow(Follows:List<Follow> ) :List<Post>{
+        Follows.forEach{
+             val filter = Document("_id", Follows);
+             val primitives = collection.find(filter).map { it as Document }.toList();
+
+             return primitives.map {
+                 Post.fromPrimitives(it.toMap() as Map<String, String>)
+             };
+         }
+        return throw IllegalArgumentException("You don't follow any user")
+    }
+
 }

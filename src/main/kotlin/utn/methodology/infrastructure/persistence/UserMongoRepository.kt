@@ -4,6 +4,7 @@ import com.mongodb.client.MongoCollection
 import com.mongodb.client.MongoDatabase
 import com.mongodb.client.model.UpdateOptions
 import org.bson.Document
+import utn.methodology.domain.entities.Post
 import utn.methodology.domain.entities.Usuario
 
 class UserMongoRepository(private val database: MongoDatabase) {
@@ -28,7 +29,10 @@ class UserMongoRepository(private val database: MongoDatabase) {
     }
 
     fun findAll(): List<Usuario> {
-        return collection.find().map { Usuario.fromPrimitives((it as Document).toMap() as Map<String, String>) }
+        val primitives = collection.find().map { it as Document }.toList();
+        return primitives.map {
+            Usuario.fromPrimitives(it.toMap() as Map<String, String>)
+        };
     }
 
     fun findByUsername(username: String): Usuario? {
@@ -43,8 +47,4 @@ class UserMongoRepository(private val database: MongoDatabase) {
         return primitives?.let { Usuario.fromPrimitives(it as Map<String, String>) }
     }
 
-    fun delete(user: Usuario) {
-        val filter = Document("_uuid", user.getIdUser())
-        collection.deleteOne(filter)
-    }
 }

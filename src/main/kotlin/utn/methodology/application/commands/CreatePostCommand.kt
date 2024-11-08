@@ -11,7 +11,7 @@ class CreatePostCommand(
         checkNotNull(uuidUser) { throw IllegalArgumentException("User Id does not exist") }
         checkNotNull(text) { throw IllegalArgumentException("text must be defined correctly") }
         checkNotNull(date) {throw IllegalArgumentException("date must be defined correctly")}
-        checkNotNull(createdAt) {throw IllegalArgumentException("date must be defined correctly")}
+//        checkNotNull(createdAt) {throw IllegalArgumentException("date must be defined correctly")}
         return this;
     }
 }

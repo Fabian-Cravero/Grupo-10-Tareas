@@ -6,7 +6,7 @@ class Post(
     // val userId: String,
     var text: String,
     var date: String,
-    var createdAt: String
+//    var createdAt: String
 ) {
     fun getIdPost(): String {
         return this.uuid
@@ -20,7 +20,7 @@ class Post(
                 // userId = primitives["userId"] as String,
                 text = primitives["text"] as String,
                 date = primitives["date"] as String,
-                createdAt = primitives["createdAt"] as String
+//                createdAt = primitives["createdAt"] as String
             )
         }
     }
@@ -32,7 +32,7 @@ class Post(
             // "userId" to this.userId,
             "text" to this.text,
             "date" to this.date,
-            "createdAt" to this.createdAt
+//            "createdAt" to this.createdAt
         )
     }
 
