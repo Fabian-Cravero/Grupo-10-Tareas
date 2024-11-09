@@ -1,14 +1,16 @@
 package utn.methodology.application.commands
+import kotlinx.serialization.Serializable
 
+@Serializable()
 
 class FollowerUserCommand (
-    val uuid:String,
+    val uuidUser:String,
     var username: String,
     )
 {
     fun validate(): FollowerUserCommand {
-        checkNotNull(username) { throw IllegalArgumentException("Name must be defined") }
-        checkNotNull(uuid) {throw IllegalArgumentException("Id not found")}
+        checkNotNull(uuidUser) {throw IllegalArgumentException("Id not found")}
+        checkNotNull(username) { throw IllegalArgumentException("Name must be defined")}
         return this;
     }
 }

@@ -2,6 +2,7 @@ package utn.methodology.infrastructure.persistence
 
 import com.mongodb.client.MongoCollection
 import com.mongodb.client.MongoDatabase
+import com.mongodb.client.model.UpdateOptions
 import org.bson.Document
 import utn.methodology.domain.entities.Follow
 
@@ -20,7 +21,10 @@ class FollowMongoRepository(private val database: MongoDatabase) {
         return Follow.fromPrimitives(primitives as Map<String, String>)
     }
     fun follow (follow: Follow){
-        follows.insertOne(follow)
+        val options = UpdateOptions().upsert(true)
+        val filter = Document("_uuid", follow.getIdUser())
+        val update = Document("\$set", follow.toPrimitives())
+        follows.updateOne(filter, update, options)
     }
 
     fun unFollow(follow:Follow) {

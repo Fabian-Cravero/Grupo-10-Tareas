@@ -11,12 +11,9 @@ class FollowerUserHandler (
     fun handle(command: FollowerUserCommand){
         val follow = Follow(
             UUID.randomUUID().toString(),
+            command.uuidUser,
             command.username
         )
-        if (userRepository.findByUser(follow.user) == null) {
-            userRepository.follow(follow);
-        }else{
-            throw IllegalArgumentException("You already follow this user")
-        }
+        userRepository.follow(follow)
     }
 }

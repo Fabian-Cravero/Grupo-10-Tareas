@@ -9,15 +9,11 @@ class FollowUserHandler(
     private val userRepository:FollowMongoRepository
 ) {
     fun handle(command:FollowUserCommand){
-        println("llegue hasta aca la puta madre")
         val follow = Follow(
             UUID.randomUUID().toString(),
+            command.uuidUser,
             command.username
         )
-        if (userRepository.findByUser(follow.user) == null) {
-            userRepository.follow(follow);
-        }else{
-            throw IllegalArgumentException("You already follow this user")
-        }
+        userRepository.follow(follow)
     }
 }
