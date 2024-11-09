@@ -1,5 +1,6 @@
 package utn.methodology.application.commands
 
+
 class FollowerUserCommand (
     val uuid:String,
     var username: String,

@@ -9,6 +9,7 @@ class FollowUserHandler(
     private val userRepository:FollowMongoRepository
 ) {
     fun handle(command:FollowUserCommand){
+        println("llegue hasta aca la puta madre")
         val follow = Follow(
             UUID.randomUUID().toString(),
             command.username
