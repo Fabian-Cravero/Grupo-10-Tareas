@@ -19,7 +19,7 @@ import utn.methodology.infrastructure.http.router.DeletePostRouter
 import utn.methodology.infrastructure.http.router.GetPostRouter
 import utn.methodology.infrastructure.http.router.createUserRoutes
 import utn.methodology.infrastructure.http.router.GetUserRouter
-
+import utn.methodology.infrastructure.http.router.FollowRouter
 
 fun main(args: Array<String>) {
     io.ktor.server.netty.EngineMain.main(args)
@@ -58,6 +58,7 @@ fun Application.module() {
     FollowUserRouter()
     FollowerUserRouter()
     errorHandler()
+    FollowRouter()
 }
 
 

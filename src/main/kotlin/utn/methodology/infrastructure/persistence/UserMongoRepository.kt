@@ -7,7 +7,7 @@ import org.bson.Document
 import utn.methodology.domain.entities.Post
 import utn.methodology.domain.entities.Usuario
 
-class UserMongoRepository(private val database: MongoDatabase) {
+open class UserMongoRepository(private val database: MongoDatabase) {
 
     private var collection: MongoCollection<Any>
 
