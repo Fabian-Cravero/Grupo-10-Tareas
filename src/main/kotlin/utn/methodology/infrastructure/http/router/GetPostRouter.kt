@@ -30,7 +30,7 @@ fun Application.GetPostRouter(){
                return@get
            }
 
-           val post = call.request.queryParameters.get("post").toString()
+           val post = call.request.queryParameters.get("uuid").toString()
            val query = FindPostByIdQuery(post)
            val result = getpostAction.execute(query);
 

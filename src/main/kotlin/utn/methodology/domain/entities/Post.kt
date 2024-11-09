@@ -19,7 +19,7 @@ class Post(
                 uuidUser = primitives["uuidUser"] as String,
                 // userId = primitives["userId"] as String,
                 text = primitives["text"] as String,
-                date = primitives["date"] as String,
+                date = primitives["date"] as String
 //                createdAt = primitives["createdAt"] as String
             )
         }

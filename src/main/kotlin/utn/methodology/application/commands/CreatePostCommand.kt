@@ -1,11 +1,12 @@
 package utn.methodology.application.commands
 
+import kotlinx.serialization.Serializable
 
+@Serializable()
 class CreatePostCommand(
     val uuidUser: String,
     var text:String,
-    var date:String,
-    var createdAt:String
+    var date:String
 ) {
     fun validate(): CreatePostCommand {
         checkNotNull(uuidUser) { throw IllegalArgumentException("User Id does not exist") }
