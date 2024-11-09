@@ -12,9 +12,9 @@ class FindPostByHandlers (
 
         val post = PostRepository.findOne(query.id)
 
-        if (post == null) {
-            throw NotFoundException("user with id: ${query.id} not found")
-        }
+
+            ?:  throw NotFoundException("Post with id: ${query.id} not found")
+
 
         return post.toPrimitives()
     }

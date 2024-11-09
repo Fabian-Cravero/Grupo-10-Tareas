@@ -12,7 +12,7 @@ class FollowMongoRepository(private val database: MongoDatabase) {
         follows = database.getCollection("follow") as MongoCollection<Any>;
     }
     fun findByUser(user: String): Follow? {
-        val filter = Document("follow", user);
+        val filter = Document("_id", user);
         val primitives = follows.find(filter).firstOrNull();
         if (primitives == null) {
             return null;
@@ -24,7 +24,7 @@ class FollowMongoRepository(private val database: MongoDatabase) {
     }
 
     fun unFollow(follow:Follow) {
-        val filter = Document("uuid", follow.getIdUser());
+        val filter = Document("_id", follow.getIdUser());
         follows.deleteOne(filter)
     }
     fun findAll(): List<Follow> {
