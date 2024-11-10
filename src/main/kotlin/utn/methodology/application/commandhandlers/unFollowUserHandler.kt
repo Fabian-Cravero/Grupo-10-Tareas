@@ -11,6 +11,7 @@ class unFollowUserHandler(
 
         val unfollow = Follow(
             command.uuid,
+            command.uuidUser,
             command.username
         )
         if (userRepository.findByUser(command.username) == null) {

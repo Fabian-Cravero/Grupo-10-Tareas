@@ -11,7 +11,6 @@ class CreateUserHandler (
         fun handle(command: CreateUserCommand) {
             val user = Usuario(
                 UUID.randomUUID().toString(),
-                command.name,
                 command.username,
                 command.email,
                 command.password
