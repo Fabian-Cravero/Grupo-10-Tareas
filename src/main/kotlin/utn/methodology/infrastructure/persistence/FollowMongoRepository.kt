@@ -28,7 +28,7 @@ class FollowMongoRepository(private val database: MongoDatabase) {
     }
 
     fun unFollow(follow:Follow) {
-        val filter = Document("_id", follow.getIdUser());
+        val filter = Document("_uuid", follow.getIdUser());
         follows.deleteOne(filter)
     }
     fun findAll(): List<Follow> {

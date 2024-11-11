@@ -8,17 +8,20 @@ import utn.methodology.infrastructure.http.actions.GetPostAction
 import utn.methodology.infrastructure.persistence.PostMongoRepository
 import utn.methodology.infrastructure.persistence.connectToMongoDB
 import  utn.methodology.application.queryhandlers.FindPostByHandlers
+import utn.methodology.application.queryhandlers.FindPostByUserHandler
+import utn.methodology.infrastructure.http.actions.GetPostByUserAction
 
 fun Application.GetPostRouter(){
     val mongoDataBase = connectToMongoDB()
     val mongoPostRepository = PostMongoRepository(mongoDataBase)
     val getpostAction = GetPostAction(FindPostByHandlers(mongoPostRepository))
+    val getpostByUserAction= GetPostByUserAction(FindPostByUserHandler(mongoPostRepository))
     routing {
        get ("/posts") {
 
            val order = call.request.queryParameters["order"] ?: "DESC"
            val limit = call.request.queryParameters["limit"]?.toIntOrNull() ?: 10
-           val offset = call.request.queryParameters["offset"]?.toIntOrNull() ?: 0
+//           val offset = call.request.queryParameters["offset"]?.toIntOrNull() ?: 0
 
            if (limit <= 0 || limit > 100) {
                call.respond(HttpStatusCode.BadRequest, "Limit must be between 1 and 100")
@@ -36,5 +39,11 @@ fun Application.GetPostRouter(){
 
            call.respond(HttpStatusCode.Created, result)
        }
+        get ("/posts/{uuidUser}"){
+            val post = call.request.queryParameters.get("uuidUser").toString()
+            val query = FindPostByIdQuery(post)
+            val result = getpostByUserAction.execute(query)
+            call.respond(HttpStatusCode.Created, result)
+        }
    }
 }

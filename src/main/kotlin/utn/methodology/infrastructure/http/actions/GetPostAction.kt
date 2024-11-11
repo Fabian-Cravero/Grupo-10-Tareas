@@ -8,7 +8,6 @@ class GetPostAction(private val handler : FindPostByHandlers) {
 
     fun execute(query: FindPostByIdQuery): Map<String, String> {
         query
-            .validate()
             .let {
                 return handler.handle(it)
             }

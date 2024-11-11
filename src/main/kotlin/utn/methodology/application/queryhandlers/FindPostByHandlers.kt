@@ -11,11 +11,7 @@ class FindPostByHandlers (
     fun handle(query: FindPostByIdQuery): Map<String, String> {
 
         val post = PostRepository.findOne(query.id)
-
-
             ?:  throw NotFoundException("Post with id: ${query.id} not found")
-
-
         return post.toPrimitives()
     }
 }

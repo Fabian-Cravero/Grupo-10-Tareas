@@ -42,21 +42,30 @@ class PostMongoRepository(private val database: MongoDatabase)
             return Post.fromPrimitives(primitives as Map<String, String>)
         }
     }
+    fun finAllPostByUser(id:String):List<Post>{
+        val filter = Document("_uuidUser", id);
+        val post = collection.find(filter).map{it as Document}.toList()
+        val result = post.map {
+            Post.fromPrimitives(it.toMap() as Map<String, String>)
+        }
+        return result
+    }
     fun delete(post: Post) {
         val filter = Document("_uuid", post.getIdPost());
 
         collection.deleteOne(filter)
     }
     fun findPostbyFollow(Follows:List<Follow> ) :List<Post>{
-        Follows.forEach{
-             val filter = Document("_id", Follows);
-             val primitives = collection.find(filter).map { it as Document }.toList();
+        val result = Follows.flatMap {
+            val filter = Document("_id", it)
+            val primitives = collection.find(filter).map { it as Document }.toList()
 
-             return primitives.map {
-                 Post.fromPrimitives(it.toMap() as Map<String, String>)
-             };
-         }
-        return throw IllegalArgumentException("You don't follow any user")
+            primitives.map {
+                Post.fromPrimitives(it.toMap() as Map<String, String>)
+            }
+        }
+
+        return result
     }
 
 }
