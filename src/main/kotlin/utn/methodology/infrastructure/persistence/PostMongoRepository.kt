@@ -43,7 +43,7 @@ class PostMongoRepository(private val database: MongoDatabase)
         }
     }
     fun finAllPostByUser(id:String):List<Post>{
-        val filter = Document("_uuidUser", id);
+        val filter = Document("uuidUser", id);
         val post = collection.find(filter).map{it as Document}.toList()
         val result = post.map {
             Post.fromPrimitives(it.toMap() as Map<String, String>)

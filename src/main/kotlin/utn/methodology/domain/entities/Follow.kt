@@ -1,5 +1,7 @@
 package utn.methodology.domain.entities
+import kotlinx.serialization.Serializable
 
+@Serializable
 class Follow (
     val uuid: String,
     val uuidUser: String,

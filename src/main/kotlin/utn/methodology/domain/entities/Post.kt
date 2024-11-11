@@ -1,14 +1,19 @@
 package utn.methodology.domain.entities
+import kotlinx.serialization.Serializable
+
+@Serializable
 
 class Post(
     val uuid: String,
     val uuidUser: String,
     var text: String,
     var date: String,
-//    var createdAt: String
 ) {
     fun getIdPost(): String {
         return this.uuid
+    }
+    fun getIdUserPost(): String {
+        return this.uuidUser
     }
 
     companion object {

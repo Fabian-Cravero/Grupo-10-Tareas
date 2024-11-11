@@ -9,7 +9,9 @@ import utn.methodology.infrastructure.persistence.PostMongoRepository
 import utn.methodology.infrastructure.persistence.connectToMongoDB
 import  utn.methodology.application.queryhandlers.FindPostByHandlers
 import utn.methodology.application.queryhandlers.FindPostByUserHandler
+import utn.methodology.domain.entities.Post
 import utn.methodology.infrastructure.http.actions.GetPostByUserAction
+import kotlinx.serialization.Serializable
 
 fun Application.GetPostRouter(){
     val mongoDataBase = connectToMongoDB()
@@ -39,11 +41,21 @@ fun Application.GetPostRouter(){
 
            call.respond(HttpStatusCode.Created, result)
        }
-        get ("/posts/{uuidUser}"){
-            val post = call.request.queryParameters.get("uuidUser").toString()
-            val query = FindPostByIdQuery(post)
-            val result = getpostByUserAction.execute(query)
-            call.respond(HttpStatusCode.Created, result)
+//        get ("/posts/{uuidUser}"){
+//            val uuidUser = call.parameters["uuidUser"].toString()
+//            val query = FindPostByIdQuery(uuidUser)
+//            val result = getpostByUserAction.execute(query)
+//            call.respond(HttpStatusCode.OK, result)
+//        }
+
+        @Serializable
+        data class PostListWrapper(val posts: List<Post>)
+        get("/posts/{uuidUser}") {
+            val uuidUser = call.parameters["uuidUser"].toString()
+            val query = FindPostByIdQuery(uuidUser)
+            val result = getpostByUserAction.execute(query) // asumiendo que devuelve List<Post>
+            val wrappedResult = PostListWrapper(result) // Envuelve en la clase serializable
+            call.respond(HttpStatusCode.OK, wrappedResult)
         }
    }
 }
