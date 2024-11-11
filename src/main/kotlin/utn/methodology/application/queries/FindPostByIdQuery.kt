@@ -5,7 +5,7 @@ data class FindPostByIdQuery (
 ){
 
     fun validate() : FindPostByIdQuery {
-        checkNotNull(id) {throw IllegalArgumentException("Id must be defined")}
+        checkNotNull(id) {throw IllegalArgumentException("IdUser must be defined")}
         return this
     }
 }
