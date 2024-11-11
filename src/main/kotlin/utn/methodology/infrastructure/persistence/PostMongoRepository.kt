@@ -57,7 +57,7 @@ class PostMongoRepository(private val database: MongoDatabase)
     }
     fun findPostbyFollow(Follows:List<Follow> ) :List<Post>{
         val result = Follows.flatMap {
-            val filter = Document("_uuid", it)
+            val filter = Document("_uuidUser", it)
             val primitives = collection.find(filter).map { it as Document }.toList()
 
             primitives.map {

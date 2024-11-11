@@ -48,7 +48,7 @@ fun Application.FollowUserRouter(){
         }
         @Serializable
         data class PostListWrapper(val posts: List<Post>)
-        get("/posts/follow") {
+        get("/posts/follow/{uuidUser}") {
             val followsUsers = followMongoUserRepository.findAll();
             val Post =postRepository.findPostbyFollow(followsUsers)
             val wrappedResult = PostListWrapper(Post)
