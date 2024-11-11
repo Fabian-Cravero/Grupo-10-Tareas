@@ -17,7 +17,6 @@ class UserCreateTest {
     fun create_user_should_returns_201() {
         val validUser = Usuario(
             uuid = "123456",
-            name = "Lionel Messi",
             username = "leomessi",
             email = "leo.messi@example.com",
             password = "barcabarca"
@@ -32,7 +31,6 @@ class UserCreateTest {
     fun create_user_should_returns_400() {
         val invalidUser = Usuario(
             uuid = "654321",
-            name = "Cristiano Ronaldo",
             username = "cristiano",
             email = "",
             password = "madridmadrid"

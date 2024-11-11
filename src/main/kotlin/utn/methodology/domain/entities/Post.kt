@@ -12,9 +12,6 @@ class Post(
     fun getIdPost(): String {
         return this.uuid
     }
-    fun getIdUserPost(): String {
-        return this.uuidUser
-    }
 
     companion object {
         fun fromPrimitives(primitives: Map<String, String>): Post {

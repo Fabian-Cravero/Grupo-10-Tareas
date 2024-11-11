@@ -41,20 +41,28 @@ fun Application.GetPostRouter(){
 
            call.respond(HttpStatusCode.Created, result)
        }
-//        get ("/posts/{uuidUser}"){
-//            val uuidUser = call.parameters["uuidUser"].toString()
-//            val query = FindPostByIdQuery(uuidUser)
-//            val result = getpostByUserAction.execute(query)
-//            call.respond(HttpStatusCode.OK, result)
-//        }
+
 
         @Serializable
         data class PostListWrapper(val posts: List<Post>)
         get("/posts/{uuidUser}") {
+            val order = call.request.queryParameters["order"] ?: "DESC"
+            val limit = call.request.queryParameters["limit"]?.toIntOrNull() ?: 10
+//           val offset = call.request.queryParameters["offset"]?.toIntOrNull() ?: 0
+
+            if ( limit > 100) {
+                call.respond(HttpStatusCode.BadRequest, "Limit must be between 1 and 100")
+                return@get
+            }
+
+            if (order.uppercase() !in listOf("ASC", "DESC")) {
+                call.respond(HttpStatusCode.BadRequest, "Order must be ASC or DESC")
+                return@get
+            }
             val uuidUser = call.parameters["uuidUser"].toString()
             val query = FindPostByIdQuery(uuidUser)
-            val result = getpostByUserAction.execute(query) // asumiendo que devuelve List<Post>
-            val wrappedResult = PostListWrapper(result) // Envuelve en la clase serializable
+            val result = getpostByUserAction.execute(query)
+            val wrappedResult = PostListWrapper(result)
             call.respond(HttpStatusCode.OK, wrappedResult)
         }
    }
